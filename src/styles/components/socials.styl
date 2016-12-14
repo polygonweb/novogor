@@ -1,0 +1,54 @@
+/**
+ * Cсылки га соц. сети
+ */
+.social-link
+	position relative
+	display inline-block
+	vertical-align middle
+	font-size 25px
+	width  1em
+	height 1em
+	line-height 1em
+	overflow hidden
+	color transparent
+	transition background-color .2s
+
+	&:hover
+		background-color #0082ff
+
+	&::before
+		content ""
+		position absolute
+		top 0
+		left 0
+		width 6em
+		height 1em
+		background url("../img/socials.png") no-repeat
+		background-size 6em 1em
+
+	&_yt::before
+		left 0
+	&_lj::before
+		left -1em
+	&_fb::before
+		left -2em
+	&_vk::before
+		left -3em
+	&_tw::before
+		left -4em
+	&_in::before
+		left -5em
+
+/**
+
+ * Группа ссылок
+ */
+.socials
+	display inline-block
+	vertical-align middle
+	overflow hidden
+	padding-left 1px
+
+	&__item
+		margin-left 1px
+		float left

@@ -1,0 +1,23 @@
+{
+  "name": "novogor",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "gulp dev",
+    "build": "gulp build",
+    "server": "browser-sync start --server --files \"docs\" --serveStatic \"docs\" --directory"
+  },
+  "author": "monochromer@mail.ru",
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "browser-sync": "^2.18.2",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.2.2",
+    "gulp-postcss": "^6.2.0",
+    "gulp-pug": "^3.2.0",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-stylus": "^2.6.0"
+  },
+  "dependencies": {
+    "normalize.css": "^5.0.0"
+  }
+}

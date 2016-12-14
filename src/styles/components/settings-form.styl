@@ -1,0 +1,43 @@
+/**
+ * Форма настроек
+ */
+.settings-form
+	width 100%
+	max-width 640px
+	display table
+	border-collapse collapse
+	font-size 16px
+
+	&__item
+		display table-row
+		background-color #eff2f3
+
+		& + &
+			border-top 1px solid #fff
+
+	&__cell
+		box-sizing border-box
+		padding 28px 0
+		display table-cell
+		vertical-align top
+
+		&_controls
+			padding-right 58px
+			width 1px
+			white-space nowrap
+
+		&_name
+			width 232px
+			padding-right 58px
+			padding-left 32px
+
+		@media (max-width: 600px)
+			padding-left 16px
+			padding-right 16px
+
+	&__link
+		font-size 14px
+		color #1b4792
+
+	&__button
+		font-size 22px

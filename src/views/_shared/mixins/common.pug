@@ -1,0 +1,52 @@
+mixin style(url)
+	link(rel="stylesheet", href=url)
+
+mixin styles(urls)
+	each url in urls
+		+style(url)
+
+mixin script(url)
+	script(src=url)
+
+mixin scripts(urls)
+	each url in urls
+		+script(url)
+
+
+mixin control(type, id, name, text, checked, disabled)
+	.control(class="control_" + type)&attributes(attributes)
+		input(
+			type=type,
+			id=id,
+			name=name,
+			checked=(!!checked) ? checked : false,
+			disabled=(!!disabled) ? disabled : false
+		).control__input
+		.control__icon
+		| #{text ? text : ""}
+
+mixin checkbox(id, name, text, checked, disabled)
+	//- .control.control_checkbox&attributes(attributes)
+	//- 	input(
+	//- 		type="checkbox",
+	//- 		id=id,
+	//- 		name=name,
+	//- 		checked=(!!checked) ? checked : false,
+	//- 		disabled=(!!disabled) ? disabled : false
+	//- 	).control__input
+	//- 	.control__icon
+	//- 	| #{text ? text : ""}
+	+control("checkbox", id, name, text, checked, disabled)&attributes(attributes)
+
+mixin radio(id, name, text, checked, disabled)
+	//- .control.control_radio&attributes(attributes)
+	//- 	input(
+	//- 		type="radio",
+	//- 		id=id,
+	//- 		name=name,
+	//- 		checked=(!!checked) ? checked : false,
+	//- 		disabled=(!!disabled) ? disabled : false
+	//- 	).control__input
+	//- 	.control__icon
+	//- 	| #{text ? text : ""}
+	+control("radio", id, name, text, checked, disabled)&attributes(attributes)

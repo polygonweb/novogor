@@ -1,0 +1,39 @@
+.footer
+	margin-top auto
+	flex 0 0 auto
+	color: #fff;
+	background url("../img/footer-pattern.png") #1b4792
+
+	&__inner
+		margin-left  -20px
+		margin-right -20px
+		padding 13px 0
+		font-size 0
+		text-align justify
+		text-justify distribute-all-lines
+
+		&::after
+			content ""
+			display inline-block
+			vertical-align top
+			width 100%
+
+	&__cell
+		display inline-block
+		vertical-align top
+		box-sizing border-box
+		padding 6px 20px
+		font-size 1rem
+		line-height 2.5rem
+		text-align left
+
+	&__socials-label
+		margin-right 14px
+
+	@media (max-width 480px)
+		&__inner
+			padding-top 0
+			padding-bottom 0
+
+		&__cell
+			width 100%

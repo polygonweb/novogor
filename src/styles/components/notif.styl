@@ -1,0 +1,70 @@
+.notif
+	background-color #fbdedf
+	border-bottom 1px solid rgba(226, 31, 39, 0.37)
+
+	&__body
+		position relative
+		padding: 18px 0 34px
+
+		&::after
+			content ""
+			display table
+			width 100%
+
+		&::before
+			content ""
+			margin-right 20px
+			float left
+			width 55px
+			height 55px
+			background url("../img/warn.png") no-repeat
+
+	&__close
+		position absolute
+		top 8px
+		right 20px
+		padding 20px
+		width  10px
+		height 10px
+		border 0
+		background 0
+		cursor pointer
+		color #8f8080
+		transition .2s
+
+		&:hover
+			color rgba(226, 31, 39, 0.5)
+			background-color rgba(0, 0, 0, .05)
+
+		&::before
+		&::after
+			content ""
+			position absolute
+			top 0
+			bottom 0
+			left 0
+			right 0
+			margin auto
+			width 10px
+			height 0
+			border-top 2px solid
+
+		&::before
+			transform rotate(45deg)
+		&::after
+			transform rotate(-45deg)
+
+	&__content
+		display block
+		width auto
+		overflow hidden
+		padding-top 5px
+		font-size 18px
+
+	&__title
+		margin 0
+		font-size 20px
+		font-weight bold
+
+	&__text
+		line-height 1

@@ -1,0 +1,50 @@
+extends _shared/layout
+
+block content
+
+	.wrapper
+
+		h1.page-title Личные настройки
+
+		.account-info.account-info_simple
+			h5.account-info__title Иванов Иван Иванович Лицевой счет №12121212
+			div г. Березники, Псковская ул, 15, кв. 15
+
+		form.settings-form
+			.settings-form__item
+				.settings-form__cell.settings-form__cell_name Пароль
+				.settings-form__cell *******
+				.settings-form__cell.settings-form__cell_controls
+					a(href="#404").settings-form__link.link Изменить
+
+			.settings-form__item
+				.settings-form__cell.settings-form__cell_name Электронная почта
+				.settings-form__cell adress@adress.ru
+				.settings-form__cell.settings-form__cell_controls
+					a(href="#404").settings-form__link.link Изменить
+
+			.settings-form__item
+				.settings-form__cell.settings-form__cell_name Номер телефона
+				.settings-form__cell +7922 ***-**-22
+				.settings-form__cell.settings-form__cell_controls
+					a(href="#404").settings-form__link.link Изменить
+
+			.settings-form__item
+				.settings-form__cell.settings-form__cell_name Подписки
+				.settings-form__cell
+					.control-list
+						+checkbox("", "", "Раздел 1").control-list__item
+						+checkbox("", "", "Раздел 2").control-list__item
+				.settings-form__cell.settings-form__cell_controls
+
+			.settings-form__item
+				.settings-form__cell.settings-form__cell_name
+				.settings-form__cell
+					button.settings-form__button.button(type="submit") Сохранить
+				.settings-form__cell.settings-form__cell_controls
+
+		.add-button-wrapper
+			button(type="button").add-button
+				.add-button__icon
+				.add-button__text Присоединить новый лицевой счет
+

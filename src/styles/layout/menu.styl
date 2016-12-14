@@ -1,0 +1,117 @@
+$media = 680px
+
+.menu-link
+	display block
+	box-sizing border-box
+	padding 12px 10px
+	text-decoration none
+	color inherit
+	transition .2s
+
+	&:hover
+		background rgba(0, 0, 0, .2)
+
+
+.menu-trigger
+	padding-left 24px
+	cursor pointer
+
+	&:focus
+		outline 0
+
+	&__icon
+		margin-right 10px
+		position relative
+		display inline-block
+		vertical-align middle
+		box-sizing border-box
+		width 28px
+		height 22px
+		border 4px solid
+		border-width 4px 0
+
+		&::before
+			content ""
+			position absolute
+			top 0
+			bottom 0
+			left 0
+			right 0
+			margin auto
+			height 0
+			border-top 4px solid
+
+	&__text
+		vertical-align middle
+
+
+.menu
+	font-size 16px
+	line-height 1
+	color #fff
+	background #1b4792
+
+	&__inner
+		position relative
+		@media (max-width $media)
+			padding-left 0
+			padding-right 0
+
+	&__trigger
+		display none
+		border 0
+		background 0
+		text-align left
+		@media (max-width $media)
+			display block
+			width 100%
+
+	&__list
+		@media (max-width $media)
+			opacity 0
+			visibility hidden
+
+	&_open &__list
+		@media (max-width $media)
+			opacity 1
+			visibility visible
+
+
+.menu-list
+	margin 0
+	padding 0
+	list-style-type none
+	display table
+	width 100%
+	table-layout fixed
+	border-collapse collapse
+	text-align center
+
+	&__item
+		display table-cell
+		vertical-align middle
+
+	@media (max-width $media)
+		position absolute
+		z-index 1
+		left 0
+		right 0
+		top 100%
+		display block
+		text-align left
+
+		&__item
+			display block
+			width 100%
+
+		&__item
+			padding-left 0
+			padding-right 0
+			background #1b4792
+
+		&__link
+			display block
+			margin-top -1px
+			padding: 21px 46px;
+			border 1px solid rgba(255, 255, 255, .1)
+			border-width 1px 0

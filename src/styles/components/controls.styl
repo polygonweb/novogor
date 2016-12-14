@@ -1,0 +1,185 @@
+/**
+ * Радиобатоны и чекбоксы
+ */
+/* общие стили */
+.control
+	position relative
+	display inline-block
+	padding-left 26px
+	line-height 22px
+	cursor pointer
+
+	&__input
+		position absolute
+		z-index 1
+		top 0
+		left 0
+		width 100%
+		height 100%
+		opacity 0
+		cursor pointer
+
+	&__icon
+		position absolute
+		top 0
+		left 0
+		box-sizing border-box
+		width 22px
+		height 22px
+		border 1px solid #cecece
+		border-radius 2px
+		box-shadow 0 3px rgba(0, 0, 0, .07) inset
+		color #fff
+		background-color #fff
+		transition .2s
+
+		&::before
+			content ""
+			position absolute
+			top 0
+			bottom 0
+			left 0
+			right 0
+			margin auto
+
+	&:hover &__icon
+		border-color #a8a8a8
+
+	&__input:checked + &__icon
+		border-color transparent
+		background-color #1b4792
+
+	/* чекбоксы */
+	&_checkbox &__icon::before
+		margin-bottom 6px
+		transform scale(0) rotate(45deg)
+		width 5px
+		height 10px
+		border 2px solid
+		border-top-width 0
+		border-left-width 0
+		transition .2s
+
+	&_checkbox &__input:checked + &__icon::before
+		transform scale(1) rotate(45deg)
+
+	/* радиобатоны */
+	&_radio &__icon
+		border-radius 50%
+
+	&_radio &__icon::before
+		transform scale(0)
+		width 0
+		height 0
+		border 4px solid
+		border-radius inherit
+		transition .2s
+
+	&_radio &__input:checked + &__icon::before
+		transform scale(1)
+
+
+/**
+ * Список контролов
+ */
+.control-list
+	&__item
+		display block
+		& + &
+			margin-top 14px
+
+
+/**
+ * Кнопки
+ */
+.button
+	display inline-block
+	padding 0 15px
+	border 0
+	height 41px
+	line-height 41px
+	color #fff
+	background #1b4792
+	user-select none
+	border-radius 3px
+	transition .2s
+	cursor pointer
+
+	&:hover
+		box-shadow 0 0 0 99px rgba(255, 255, 255, .1) inset
+
+	&:active
+		box-shadow 0 0 0 99px rgba(0, 0, 0, .1) inset
+
+
+/**
+ * Кнопка для добавления
+ */
+.add-button-wrapper
+	padding-top 36px
+	padding-bottom 36px
+
+.add-button
+	position relative
+	display inline-block
+	padding-left 36px
+	border 0
+	overflow visible
+	font-size 22px
+	background 0
+	color #1b4792
+	cursor pointer
+	text-align left
+
+
+	&__icon
+		position absolute
+		top 0
+		left 0
+		display inline-block
+		vertical-align middle
+		width 26px
+		height 26px
+		background #1b4792
+		border-radius 50%
+		transition .3s
+
+		&::before
+		&::after
+			content ""
+			position absolute
+			top 0
+			bottom 0
+			left 0
+			right 0
+			margin auto
+			background #fff
+
+		&::before
+			width 3px
+			height 15px
+
+		&::after
+			width 15px
+			height 3px
+
+	&:hover &__icon
+		transform scale(1.2)
+
+	&__text
+		position relative
+		display inline-block
+		vertical-align top
+
+		&::after
+			content ''
+			position absolute
+			left 0
+			right 0
+			bottom 0
+			border-top 1px solid
+			opacity .3
+			transition .2s
+
+	&:hover &__text::after
+		opacity 0

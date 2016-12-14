@@ -1,0 +1,47 @@
+include mixins/common
+
+block vars
+	- var rootClass = "";
+	- var bodyClass = "";
+	- var pageTitle = title || "Новогор-Прикамье";
+
+doctype html
+html(class=rootClass, lang="ru")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		title #{pageTitle}
+
+		block headStyles
+			+styles(["css/main.css"])
+
+		block headScripts
+
+	body(class=bodyClass)
+
+		include header
+		include menu
+
+		main.content
+			block content
+
+			.wrapper
+				ul.quick-links
+					li.quick-links__item
+						a(href="#", title="Единый расчетный центр").quick-link
+							img.quick-link__img(src="img/links/calc-center.png", width="146", height="51", alt="Единый расчетный центр")
+					li.quick-links__item
+						a(href="#", title="Администрация города Перми").quick-link
+							img.quick-link__img(src="img/links/adm.png", width="129", height="60", alt="Администрация города Перми")
+					li.quick-links__item
+						a(href="#", title="Региональная служба по тарифам Пермского края").quick-link
+							img.quick-link__img(src="img/links/reg.png", width="200", height="60", alt="Региональная служба по тарифам Пермского края")
+					li.quick-links__item
+						a(href="#", title="Call-центр главы города Перми").quick-link
+							img.quick-link__img(src="img/links/call.png", width="133", height="60", alt="Call-центр главы города Перми")
+
+		include footer
+
+		block bodyScripts
+			+scripts(["js/scripts.js"])
