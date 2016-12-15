@@ -606,6 +606,7 @@ template {
   height: 41px;
   line-height: 41px;
   color: #fff;
+  text-decoration: none;
   background: #1b4792;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -921,7 +922,6 @@ template {
   font-weight: bold;
 }
 .account-info__sum {
-  margin-top: 11px;
   font-size: 22px;
 }
 .account-info_simple {
@@ -935,6 +935,17 @@ template {
   .account-info_simple {
     padding-top: 31px;
   }
+}
+.account-info__value {
+  font-size: 18px;
+}
+.account-info__text {
+  margin-right: 17px;
+  padding: 11px 0;
+  display: inline-block;
+}
+.account-info__btn {
+  font-size: 20px;
 }
 .quick-link {
   display: inline-block;
@@ -1079,7 +1090,7 @@ body {
 }
 @media (max-width: 680px) {
   .header__logo {
-    margin-left: 0;
+    margin-right: 0;
   }
   .header__contacts {
     float: none;
