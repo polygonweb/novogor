@@ -25,6 +25,31 @@ UI.commonFuncs.closeNotif = function() {
 	});
 }
 
+UI.commonFuncs.modalsInit = function() {
+	// закрытие модального окна
+	document.addEventListener('click', function(e) {
+		if (e.target.classList.contains('modal__close')) {
+			var target = e.target;
+			while (!target.classList.contains('modal') && target != document.body) {
+				target = target.parentNode;
+			}
+			if (target.classList.contains('modal_show')) {
+				target.classList.remove('modal_show');
+			}
+			e.preventDefault();
+		}
+	});
+
+	// открытие модальных окон
+	document.addEventListener('click', function(e) {
+		if (e.target.hasAttribute('data-target-modal')) {
+			var modal = document.getElementById(e.target.getAttribute('data-target-modal') || '');
+			if (modal) modal.classList.add('modal_show');
+			e.preventDefault();
+		}
+	});
+}
+
 // события при загрузке DOM
 document.addEventListener('DOMContentLoaded', function () {
 	// перебираем все функции из объекта commonFuncs и вызываем их

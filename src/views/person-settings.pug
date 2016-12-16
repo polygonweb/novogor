@@ -15,19 +15,19 @@ block content
 				.settings-form__cell.settings-form__cell_name Пароль
 				.settings-form__cell *******
 				.settings-form__cell.settings-form__cell_controls
-					a(href="#404").settings-form__link.link Изменить
+					a(href="#", data-target-modal="change-password").settings-form__link.link Изменить
 
 			.settings-form__item
 				.settings-form__cell.settings-form__cell_name Электронная почта
 				.settings-form__cell adress@adress.ru
 				.settings-form__cell.settings-form__cell_controls
-					a(href="#404").settings-form__link.link Изменить
+					a(href="#", data-target-modal="change-email").settings-form__link.link Изменить
 
 			.settings-form__item
 				.settings-form__cell.settings-form__cell_name Номер телефона
 				.settings-form__cell +7922 ***-**-22
 				.settings-form__cell.settings-form__cell_controls
-					a(href="#404").settings-form__link.link Изменить
+					a(href="#", data-target-modal="change-phone").settings-form__link.link Изменить
 
 			.settings-form__item
 				.settings-form__cell.settings-form__cell_name Подписки
@@ -44,7 +44,43 @@ block content
 				.settings-form__cell.settings-form__cell_controls
 
 		.add-button-wrapper
-			button(type="button").add-button
+			button(type="button", data-target-modal="add-account").add-button
 				.add-button__icon
 				.add-button__text Присоединить новый лицевой счет
 
+
+	.modal#change-password
+		.modal__dialog
+			button(type="button").modal__close
+			h4.modal__title Изменение пароля
+			form.field-form
+				.field-form__row
+					label.field-form__cell.field-form__cell_label Новый пароль
+					.field-form__cell
+						input(type="password").text-input.text-input_full
+				.field-form__row.field-form__row_small-gutter
+					label.field-form__cell.field-form__cell_label Повторить пароль
+					.field-form__cell
+						input(type="password").text-input.text-input_full
+				.field-form__row.field-form__row_submit
+					.field-form__cell
+					.field-form__cell
+						button(type="submit").button Изменить
+
+	.modal#add-account
+		.modal__dialog
+			button(type="button").modal__close
+			h4.modal__title Присоединение лицевого счета
+			form.field-form
+				.field-form__row
+					label.field-form__cell.field-form__cell_label Логин
+					.field-form__cell
+						input(type="password").text-input.text-input_full
+				.field-form__row.field-form__row_small-gutter
+					label.field-form__cell.field-form__cell_label Пароль
+					.field-form__cell
+						input(type="password").text-input.text-input_full
+				.field-form__row.field-form__row_submit
+					.field-form__cell
+					.field-form__cell
+						button(type="submit").button Присоединить

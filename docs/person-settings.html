@@ -44,17 +44,17 @@
 					<div class="settings-form__item">
 						<div class="settings-form__cell settings-form__cell_name">Пароль</div>
 						<div class="settings-form__cell">*******</div>
-						<div class="settings-form__cell settings-form__cell_controls"><a class="settings-form__link link" href="#404">Изменить</a></div>
+						<div class="settings-form__cell settings-form__cell_controls"><a class="settings-form__link link" href="#" data-target-modal="change-password">Изменить</a></div>
 					</div>
 					<div class="settings-form__item">
 						<div class="settings-form__cell settings-form__cell_name">Электронная почта</div>
 						<div class="settings-form__cell">adress@adress.ru</div>
-						<div class="settings-form__cell settings-form__cell_controls"><a class="settings-form__link link" href="#404">Изменить</a></div>
+						<div class="settings-form__cell settings-form__cell_controls"><a class="settings-form__link link" href="#" data-target-modal="change-email">Изменить</a></div>
 					</div>
 					<div class="settings-form__item">
 						<div class="settings-form__cell settings-form__cell_name">Номер телефона</div>
 						<div class="settings-form__cell">+7922 ***-**-22</div>
-						<div class="settings-form__cell settings-form__cell_controls"><a class="settings-form__link link" href="#404">Изменить</a></div>
+						<div class="settings-form__cell settings-form__cell_controls"><a class="settings-form__link link" href="#" data-target-modal="change-phone">Изменить</a></div>
 					</div>
 					<div class="settings-form__item">
 						<div class="settings-form__cell settings-form__cell_name">Подписки</div>
@@ -81,10 +81,62 @@
 					</div>
 				</form>
 				<div class="add-button-wrapper">
-					<button class="add-button" type="button">
+					<button class="add-button" type="button" data-target-modal="add-account">
 						<div class="add-button__icon"></div>
 						<div class="add-button__text">Присоединить новый лицевой счет</div>
 					</button>
+				</div>
+			</div>
+			<div class="modal" id="change-password">
+				<div class="modal__dialog">
+					<button class="modal__close" type="button"></button>
+					<h4 class="modal__title">Изменение пароля</h4>
+					<form class="field-form">
+						<div class="field-form__row">
+							<label class="field-form__cell field-form__cell_label">Новый пароль</label>
+							<div class="field-form__cell">
+								<input class="text-input text-input_full" type="password">
+							</div>
+						</div>
+						<div class="field-form__row field-form__row_small-gutter">
+							<label class="field-form__cell field-form__cell_label">Повторить пароль</label>
+							<div class="field-form__cell">
+								<input class="text-input text-input_full" type="password">
+							</div>
+						</div>
+						<div class="field-form__row field-form__row_submit">
+							<div class="field-form__cell"></div>
+							<div class="field-form__cell">
+								<button class="button" type="submit">Изменить</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="modal" id="add-account">
+				<div class="modal__dialog">
+					<button class="modal__close" type="button"></button>
+					<h4 class="modal__title">Присоединение лицевого счета</h4>
+					<form class="field-form">
+						<div class="field-form__row">
+							<label class="field-form__cell field-form__cell_label">Логин</label>
+							<div class="field-form__cell">
+								<input class="text-input text-input_full" type="password">
+							</div>
+						</div>
+						<div class="field-form__row field-form__row_small-gutter">
+							<label class="field-form__cell field-form__cell_label">Пароль</label>
+							<div class="field-form__cell">
+								<input class="text-input text-input_full" type="password">
+							</div>
+						</div>
+						<div class="field-form__row field-form__row_submit">
+							<div class="field-form__cell"></div>
+							<div class="field-form__cell">
+								<button class="button" type="submit">Присоединить</button>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 			<div class="wrapper">

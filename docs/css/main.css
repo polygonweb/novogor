@@ -639,6 +639,14 @@ template {
   cursor: pointer;
   text-align: left;
 }
+.add-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 .add-button__icon {
   position: absolute;
   top: 0;
@@ -694,6 +702,54 @@ template {
 .add-button:hover .add-button__text::after {
   opacity: 0;
 }
+.text-input {
+  display: inline-block;
+  box-sizing: border-box;
+  max-width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid #d1d1d1;
+  border-radius: 2px;
+  box-shadow: 0 3px rgba(0,0,0,0.07) inset;
+  color: inherit;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.text-input:hover {
+  border-color: #a8a8a8;
+}
+.text-input:focus {
+  outline: 0;
+  border-color: #1b4792;
+}
+.text-input_full {
+  width: 100%;
+}
+.field-form {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 18px;
+}
+.field-form__cell {
+  display: table-cell;
+  vertical-align: top;
+  padding-bottom: 34px;
+}
+.field-form__cell_label {
+  padding-right: 24px;
+  padding-top: 9px;
+}
+.field-form__row {
+  display: table-row;
+}
+.field-form__row_small-gutter .field-form__cell {
+  padding-bottom: 22px;
+}
+.field-form__row_submit .field-form__cell {
+  padding-top: 0;
+  padding-bottom: 0;
+}
 .link {
   position: relative;
   color: inherit;
@@ -725,6 +781,98 @@ template {
   width: 18px;
   height: 20px;
   background: url("../img/logout.png");
+}
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 0;
+  color: #515151;
+  background: rgba(0,0,0,0.68);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.modal::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+.modal__dialog {
+  margin: 19px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: relative;
+  padding: 19px;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  font-size: 1rem;
+  text-align: left;
+  background: #eff2f3;
+  border-radius: 4px;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+.modal__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  width: 10px;
+  height: 10px;
+  border: 0;
+  background: 0;
+  cursor: pointer;
+  color: #8f8080;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.modal__close:hover {
+  color: rgba(226,31,39,0.5);
+  background-color: rgba(0,0,0,0.05);
+}
+.modal__close::before,
+.modal__close::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 10px;
+  height: 0;
+  border-top: 2px solid;
+}
+.modal__close::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.modal__close::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.modal__title {
+  margin: 0 3em 1em 0;
+  font-size: 26px;
+  font-weight: normal;
+}
+.modal_show {
+  opacity: 1;
+  visibility: visible;
+}
+.modal_show .modal__dialog {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 .social-link {
   position: relative;

@@ -1,0 +1,84 @@
+.modal
+	opacity 0
+	visibility hidden
+	position fixed
+	top 0
+	bottom 0
+	left 0
+	right 0
+	overflow auto
+	-webkit-overflow-scrolling touch
+	text-align center
+	white-space nowrap
+	font-size 0
+	color #515151
+	background rgba(0, 0, 0, 0.68)
+	transition .5s
+
+	&::before
+		content ""
+		display inline-block
+		vertical-align middle
+		height 100%
+
+	&__dialog
+		margin 19px
+		transform translateY(-50%)
+		position relative
+		padding 19px
+		display inline-block
+		vertical-align middle
+		overflow hidden
+		font-size 1rem
+		text-align left
+		background #eff2f3
+		border-radius 4px
+		transition inherit
+
+	&__close
+		position absolute
+		top 0
+		right 0
+		padding 20px
+		width 10px
+		height 10px
+		border 0
+		background 0
+		cursor pointer
+		color #8f8080
+		transition 0.2s
+
+		&:hover
+			color rgba(226, 31, 39, 0.5)
+			background-color rgba(0, 0, 0, .05)
+
+		&::before
+		&::after
+			content ""
+			position absolute
+			top 0
+			bottom 0
+			left 0
+			right 0
+			margin auto
+			width 10px
+			height 0
+			border-top 2px solid
+
+		&::before
+			transform rotate(45deg)
+		&::after
+			transform rotate(-45deg)
+
+	&__title
+		margin 0 3em 1em 0
+		font-size 26px
+		font-weight normal
+
+	&_show
+		opacity 1
+		visibility visible
+
+	&_show &__dialog
+		transform translateY(0)
+
