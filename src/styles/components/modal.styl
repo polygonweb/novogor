@@ -29,11 +29,18 @@
 		display inline-block
 		vertical-align middle
 		overflow hidden
+		white-space normal
 		font-size 1rem
 		text-align left
 		background #eff2f3
 		border-radius 4px
 		transition inherit
+
+		/**
+		 * Размеры мод. окон
+		 */
+		&_small
+			max-width 350px
 
 	&__close
 		position absolute
@@ -47,6 +54,8 @@
 		cursor pointer
 		color #8f8080
 		transition 0.2s
+		transform translate(0, 0)
+		transform translate3d(0, 0, 0)
 
 		&:hover
 			color rgba(226, 31, 39, 0.5)
@@ -82,3 +91,8 @@
 	&_show &__dialog
 		transform translateY(0)
 
+
+.modal-short-message
+	margin 0
+	padding 36px
+	text-align center

@@ -107,10 +107,16 @@
 						<div class="field-form__row field-form__row_submit">
 							<div class="field-form__cell"></div>
 							<div class="field-form__cell">
-								<button class="button" type="submit">Изменить</button>
+								<button class="button" type="button" data-target-modal="save-success">Изменить</button>
 							</div>
 						</div>
 					</form>
+				</div>
+			</div>
+			<div class="modal" id="save-success">
+				<div class="modal__dialog modal__dialog_small">
+					<button class="modal__close" type="button"></button>
+					<h4 class="modal-short-message modal__title">Изменение пароля успешно завершено</h4>
 				</div>
 			</div>
 			<div class="modal" id="add-account">

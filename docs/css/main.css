@@ -815,12 +815,19 @@ template {
   display: inline-block;
   vertical-align: middle;
   overflow: hidden;
+  white-space: normal;
   font-size: 1rem;
   text-align: left;
   background: #eff2f3;
   border-radius: 4px;
   -webkit-transition: inherit;
   transition: inherit;
+/**
+		 * Размеры мод. окон
+		 */
+}
+.modal__dialog_small {
+  max-width: 350px;
 }
 .modal__close {
   position: absolute;
@@ -835,6 +842,10 @@ template {
   color: #8f8080;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
 .modal__close:hover {
   color: rgba(226,31,39,0.5);
@@ -873,6 +884,11 @@ template {
 .modal_show .modal__dialog {
   -webkit-transform: translateY(0);
           transform: translateY(0);
+}
+.modal-short-message {
+  margin: 0;
+  padding: 36px;
+  text-align: center;
 }
 .social-link {
   position: relative;

@@ -65,7 +65,12 @@ block content
 				.field-form__row.field-form__row_submit
 					.field-form__cell
 					.field-form__cell
-						button(type="submit").button Изменить
+						button(type="button", data-target-modal="save-success").button Изменить
+
+	.modal#save-success
+		.modal__dialog.modal__dialog_small
+			button(type="button").modal__close
+			h4.modal-short-message.modal__title Изменение пароля успешно завершено
 
 	.modal#add-account
 		.modal__dialog
