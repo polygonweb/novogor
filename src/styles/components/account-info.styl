@@ -1,13 +1,21 @@
 .account-info
 	margin-top 24px
 	margin-bottom 78px
+	position relative
 	padding 35px
 	font-size 16px
 	color #515151
 	background #eff2f3
 
+	@media (max-width: 700px)
+		padding 22px 16px
+
+	& + &
+		margin-top -38px
+
 	&__title
 		margin 0
+		margin-right 36px
 		font-size 22px
 		line-height 1
 		font-weight bold
@@ -36,3 +44,47 @@
 
 	&__btn
 		font-size 20px
+
+	&__body
+		display block
+
+	&__toggle
+		position absolute
+		top   35px
+		right 35px
+		width 36px
+		height 36px
+		border 0
+		background-color #fff
+		border-radius 50%
+		color #a3a3a3
+		cursor pointer
+		transition .2s
+
+		@media (max-width: 700px)
+			top 16px
+			right 16px
+
+		&::before
+			content ""
+			position absolute
+			left 0
+			right 0
+			bottom 0
+			top 4px
+			margin auto
+			transform rotate(-45deg)
+			width 12px
+			height 12px
+			border 3px solid
+			border-width 3px 3px 0 0
+
+		&:hover
+			background-color #1b4792
+			color #fff
+
+	&_closed &__body
+		display none
+
+	&_closed &__toggle
+		transform rotate(180deg)

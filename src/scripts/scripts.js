@@ -23,7 +23,7 @@ UI.commonFuncs.closeNotif = function() {
 			target.parentNode.removeChild(target);
 		}
 	});
-}
+};
 
 UI.commonFuncs.modalsInit = function() {
 	// закрытие модального окна
@@ -46,6 +46,14 @@ UI.commonFuncs.modalsInit = function() {
 			var modal = document.getElementById(e.target.getAttribute('data-target-modal') || '');
 			if (modal) modal.classList.add('modal_show');
 			e.preventDefault();
+		}
+	});
+};
+
+UI.commonFuncs.collapseBlocks = function() {
+	document.addEventListener('click', function(e) {
+		if (e.target.classList.contains('account-info__toggle')) {
+			e.target.parentNode.classList.toggle('account-info_closed')
 		}
 	});
 }

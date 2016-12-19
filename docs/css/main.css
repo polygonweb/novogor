@@ -1,5 +1,5 @@
 /**
- * Стили для личнного кабинета
+ * Стили для личного кабинета
  */
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 
@@ -600,6 +600,7 @@ template {
   margin-top: 14px;
 }
 .button {
+  box-sizing: border-box;
   display: inline-block;
   padding: 0 15px;
   border: 0;
@@ -622,6 +623,21 @@ template {
 }
 .button:active {
   box-shadow: 0 0 0 99px rgba(0,0,0,0.1) inset;
+}
+.outline-btn {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0 15px;
+  font-size: 16px;
+  color: #1b4792;
+  border: 1px solid;
+  border-radius: 2px;
+  background: transparent;
+}
+.outline-btn:hover {
+  color: #fff;
+  border-color: #1b4792;
+  background-color: #1b4792;
 }
 .add-button-wrapper {
   padding-top: 36px;
@@ -725,6 +741,63 @@ template {
 .text-input_full {
   width: 100%;
 }
+.text-input ::-webkit-input-placeholder {
+  opacity: 0.44;
+}
+.text-input ::-moz-placeholder {
+  opacity: 0.44;
+}
+.text-input :-moz-placeholder {
+  opacity: 0.44;
+}
+.text-input :-ms-input-placeholder {
+  opacity: 0.44;
+}
+.text-input_date {
+  padding-right: 32px;
+  width: 160px;
+  background-image: url("../img/date.png");
+  background-repeat: no-repeat;
+  background-position: right 9px top 50%;
+}
+.date-group {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  font-size: 22px;
+}
+.date-group__item {
+  margin-right: 6px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.date-group__item:last-child {
+  margin-right: 0;
+}
+.date-group__label,
+.date-group__control {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px 0;
+}
+@media (max-width: 700px) {
+  .date-group {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  .date-group__item {
+    display: table-row;
+  }
+  .date-group__label,
+  .date-group__control {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .date-group__label {
+    padding-right: 6px;
+    text-align: right;
+  }
+}
 .field-form {
   display: table;
   border-collapse: separate;
@@ -781,6 +854,121 @@ template {
   width: 18px;
   height: 20px;
   background: url("../img/logout.png");
+}
+.data-table th[data-title]::before,
+.data-table td[data-title]::before,
+.data-table thead th,
+.data-table thead td {
+  background: #ccc;
+  font-size: 17px;
+  font-weight: bold;
+}
+.data-table-wrapper {
+  overflow: auto;
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.data-table thead {
+  font-size: 17px;
+  background: #ccc;
+}
+.data-table thead th,
+.data-table thead td {
+  box-sizing: border-box;
+}
+.data-table tr:nth-child(even) {
+  background-color: #fff;
+}
+.data-table th,
+.data-table td {
+  padding: 12px 27px;
+  text-align: left;
+}
+@media (max-width: 700px) {
+  .data-table thead {
+    display: none;
+  }
+  .data-table tbody,
+  .data-table tr,
+  .data-table th,
+  .data-table td {
+    display: block;
+  }
+  .data-table tr {
+    position: relative;
+  }
+  .data-table tr::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: 1px;
+    background: #eff2f3;
+  }
+  .data-table th,
+  .data-table td {
+    position: relative;
+    padding-left: 162px;
+    padding-right: 12px;
+  }
+  .data-table th[data-title]::before,
+  .data-table td[data-title]::before {
+    content: attr(data-title);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 150px;
+    padding: 12px;
+  }
+}
+.pagination {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+.pagination .accoint-info {
+  padding-bottom: 0;
+}
+.pagination__label {
+  margin-right: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 21px;
+}
+.pagination-nav {
+  display: inline-block;
+  vertical-align: middle;
+}
+.pagination-nav__link {
+  margin-right: 10px;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 52px;
+  height: 52px;
+  line-height: 50px;
+  border: 1px solid #1b4792;
+  color: inherit;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 1px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.pagination-nav__link_active {
+  pointer-events: none;
+  color: #fff;
+  background-color: #1b4792;
+}
+.pagination-nav__link:hover {
+  background-color: #fff;
+}
+.pagination-nav__link:last-child {
+  margin-right: 0;
 }
 .modal {
   opacity: 0;
@@ -1074,13 +1262,23 @@ template {
 .account-info {
   margin-top: 24px;
   margin-bottom: 78px;
+  position: relative;
   padding: 35px;
   font-size: 16px;
   color: #515151;
   background: #eff2f3;
 }
+@media (max-width: 700px) {
+  .account-info {
+    padding: 22px 16px;
+  }
+}
+.account-info + .account-info {
+  margin-top: -38px;
+}
 .account-info__title {
   margin: 0;
+  margin-right: 36px;
   font-size: 22px;
   line-height: 1;
   font-weight: bold;
@@ -1110,6 +1308,55 @@ template {
 }
 .account-info__btn {
   font-size: 20px;
+}
+.account-info__body {
+  display: block;
+}
+.account-info__toggle {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background-color: #fff;
+  border-radius: 50%;
+  color: #a3a3a3;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+@media (max-width: 700px) {
+  .account-info__toggle {
+    top: 16px;
+    right: 16px;
+  }
+}
+.account-info__toggle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 4px;
+  margin: auto;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  width: 12px;
+  height: 12px;
+  border: 3px solid;
+  border-width: 3px 3px 0 0;
+}
+.account-info__toggle:hover {
+  background-color: #1b4792;
+  color: #fff;
+}
+.account-info_closed .account-info__body {
+  display: none;
+}
+.account-info_closed .account-info__toggle {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 .quick-link {
   display: inline-block;

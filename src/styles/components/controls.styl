@@ -93,6 +93,7 @@
  * Кнопки
  */
 .button
+	box-sizing border-box
 	display inline-block
 	padding 0 15px
 	border 0
@@ -111,6 +112,25 @@
 
 	&:active
 		box-shadow 0 0 0 99px rgba(0, 0, 0, .1) inset
+
+
+/**
+ * Кнопка с обводкой
+ */
+.outline-btn
+	box-sizing border-box
+	display inline-block
+	padding 0 15px
+	font-size 16px
+	color #1b4792
+	border 1px solid
+	border-radius 2px
+	background transparent
+
+	&:hover
+		color #fff
+		border-color #1b4792
+		background-color #1b4792
 
 
 /**
@@ -217,6 +237,56 @@
 
 	&_full
 		width 100%
+
+	+placeholder()
+		opacity .44
+
+	&_date
+		padding-right 32px
+		width 160px
+		background-image url("../img/date.png")
+		background-repeat no-repeat
+		background-position right 9px top 50%
+
+
+/**
+ * Группа ввода дат
+ */
+.date-group
+	padding-top    16px
+	padding-bottom 16px
+	font-size 22px
+
+	&__item
+		margin-right 6px
+		display inline-block
+		vertical-align middle
+
+		&:last-child
+			margin-right 0
+
+	&__label
+	&__control
+		display inline-block
+		vertical-align middle
+		padding 10px 0
+
+	@media (max-width: 700px)
+		display table
+		border-collapse separate
+		border-spacing 0
+
+		&__item
+			display table-row
+
+		&__label
+		&__control
+			display table-cell
+			vertical-align middle
+
+		&__label
+			padding-right 6px
+			text-align right
 
 
 /**
