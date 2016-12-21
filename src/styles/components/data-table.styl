@@ -10,6 +10,12 @@ $head-cell
 .data-table-wrapper
 	overflow auto
 
+	&.gutter
+		margin-top 35px
+
+.cell-content
+	display block
+
 .data-table
 	width 100%
 	border-collapse collapse
@@ -30,7 +36,15 @@ $head-cell
 	th
 	td
 		padding 12px 27px
+		border 1px solid #ccc
+		border-width 0 1px
 		text-align left
+
+		&:first-child
+			border-left 0
+
+		&:last-child
+			border-right 0
 
 	@media (max-width 700px)
 		thead
@@ -44,28 +58,49 @@ $head-cell
 
 		tr
 			position relative
+
+			&::before
 			&::after
 				content ""
 				position absolute
 				bottom 0
 				left 0
 				width 150px
+
+			&::before
+				top 0
+				background #ccc
+
+			&::after
 				height 1px
 				background #eff2f3
 
 		th
 		td
 			position relative
-			padding-left  162px
-			padding-right 12px
+			padding 12px
+			margin-left 150px
+			border 0
+			border-bottom 1px solid #ccc
+
+		td
+			padding-left 0
+			padding-right 0
+
+			.cell-content
+				display inline-block
+				vertical-align top
+				max-width 100%
+				padding-left  12px
+				padding-right 12px
 
 			&[data-title]::before
 				content attr(data-title)
-				position absolute
-				top 0
-				bottom 0
-				left 0
+				margin-left -150px
 				box-sizing border-box
-				width 150px
+				display inline-block
+				vertical-align top
 				@extends $head-cell
-				padding 12px
+				width 150px
+				padding 0 12px
+				// padding-right 0
