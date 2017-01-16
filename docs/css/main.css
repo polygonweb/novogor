@@ -1561,6 +1561,9 @@ body {
 }
 .header {
   padding: 30px 0 18px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 .header::after {
   content: "";
@@ -1645,6 +1648,9 @@ body {
   vertical-align: middle;
 }
 .menu {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
   font-size: 16px;
   line-height: 1;
   color: #fff;
