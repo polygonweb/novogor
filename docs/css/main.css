@@ -905,6 +905,7 @@ template {
   .data-table thead {
     display: none;
   }
+  .data-table table,
   .data-table tbody,
   .data-table tr,
   .data-table th,
@@ -934,13 +935,13 @@ template {
   .data-table td {
     position: relative;
     padding: 12px;
-    margin-left: 150px;
     border: 0;
     border-bottom: 1px solid #ccc;
   }
   .data-table td {
-    padding-left: 0;
     padding-right: 0;
+    padding-left: 150px;
+    white-space: nowrap;
   }
   .data-table td .cell-content {
     display: inline-block;
@@ -948,6 +949,7 @@ template {
     max-width: 100%;
     padding-left: 12px;
     padding-right: 12px;
+    white-space: normal;
   }
   .data-table td[data-title]::before {
     content: attr(data-title);
@@ -957,6 +959,7 @@ template {
     vertical-align: top;
     width: 150px;
     padding: 0 12px;
+    white-space: normal;
   }
 }
 .pagination {

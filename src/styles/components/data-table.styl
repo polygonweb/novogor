@@ -50,6 +50,7 @@ $head-cell
 		thead
 			display none
 
+		table
 		tbody
 		tr
 		th
@@ -79,13 +80,15 @@ $head-cell
 		td
 			position relative
 			padding 12px
-			margin-left 150px
+			// margin-left 150px
 			border 0
 			border-bottom 1px solid #ccc
 
 		td
-			padding-left 0
 			padding-right 0
+			// padding-left 0
+			padding-left 150px
+			white-space nowrap
 
 			.cell-content
 				display inline-block
@@ -93,6 +96,7 @@ $head-cell
 				max-width 100%
 				padding-left  12px
 				padding-right 12px
+				white-space normal
 
 			&[data-title]::before
 				content attr(data-title)
@@ -103,4 +107,4 @@ $head-cell
 				@extends $head-cell
 				width 150px
 				padding 0 12px
-				// padding-right 0
+				white-space normal
