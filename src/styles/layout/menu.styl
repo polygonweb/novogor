@@ -89,8 +89,57 @@ $media = 680px
 	text-align center
 
 	&__item
+		position relative
 		display table-cell
 		vertical-align middle
+		background #1b4792
+		color #fff
+
+	& &
+		position absolute
+		z-index 1
+		left 0
+		top 100%
+		opacity 0
+		visibility hidden
+		display block
+		width auto
+
+	&__item &__item
+		display block
+		text-align left
+		white-space nowrap
+
+	&__item &__item &__link
+		margin-top -1px
+		// padding: 21px 46px;
+		border 1px solid rgba(255, 255, 255, 0.3)
+		border-width 1px 0
+		padding 9px 16px
+		
+		@media (max-width: 680px)
+			padding-left 72px
+
+	&__item_active &
+	&__item:hover > &
+		opacity 1
+		visibility visible
+		
+		@media (max-width: 680px)
+			position static
+
+	&__link:not(:only-child)::after
+		content ""
+		margin-left 8px
+		transform rotate(45deg)
+		opacity 0.65
+		display inline-block
+		vertical-align 3px
+		width  7px
+		height 7px
+		border 1px solid
+		border-width 0 1px 1px 0
+		color #fff
 
 	@media (max-width $media)
 		position absolute
